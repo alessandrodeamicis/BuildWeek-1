@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
     [SerializeField] private float speed;
     [SerializeField] private Transform player;
     [SerializeField] private Animator anim;
@@ -44,7 +43,6 @@ public class Enemy : MonoBehaviour
             MoveTowardsPlayer();
             Animate();
         }
-
     }
 
     void MoveTowardsPlayer()
@@ -55,7 +53,6 @@ public class Enemy : MonoBehaviour
         x = dir.x;
         y = dir.y;
         transform.position = Vector2.MoveTowards(currentPos, targetPos, speed * Time.deltaTime);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -85,13 +82,11 @@ public class Enemy : MonoBehaviour
         bool isTurning = direction != 0;
         bool dead = !life.IsAlive;
      
-
         if (isTurning)
         {
             anim.SetFloat("x", x);
             anim.SetFloat("y", y);
         }
-
 
         if (isMoving)
         {
@@ -102,6 +97,5 @@ public class Enemy : MonoBehaviour
         anim.SetBool("isMoving", isMoving);
 
         anim.SetBool("Die", dead);
-
     }
 }
