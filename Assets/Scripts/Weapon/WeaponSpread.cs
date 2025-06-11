@@ -6,23 +6,46 @@ public class WeaponSpread : BaseWeapon
 {
 
     public float spreadAngle = 30f;
+    private Vector2 shootDirection = Vector2.down;
 
     protected override void Fire()
     {
+
+        UpdateShootDirection();
+
         FireBullet(0f);
         FireBullet(+spreadAngle);
         FireBullet(-spreadAngle);
     }
 
+    void UpdateShootDirection()
+    {
+
+        shootDirection.x = Input.GetAxisRaw("Horizontal");
+        shootDirection.y = Input.GetAxisRaw("Vertical");
+
+
+        if (shootDirection.sqrMagnitude > 0.1f)
+        {
+            shootDirection.Normalize();
+        }
+        else
+        {
+            shootDirection = Vector2.down;
+        }
+    }
+
     void FireBullet(float angleOffset)
     {
-        bool facingRight = transform.localScale.x > 0;
-        float baseAngle = facingRight ? 0f : 180f;
-        float totalAngle = baseAngle + angleOffset;
 
-        Quaternion rot = Quaternion.Euler(0f, 0f, totalAngle);
-        Bullet bullet = Instantiate(projectilePrefab, firePoint.position, rot).GetComponent<Bullet>();
-        bullet.dir = rot * new Vector2(firePoint.position.x, firePoint.position.y);
+        Quaternion spreadRot = Quaternion.Euler(0, 0, angleOffset);
+        Vector2 finalDirection = spreadRot * shootDirection;
+        float angle = Mathf.Atan2(finalDirection.y, finalDirection.x) * Mathf.Rad2Deg;
+        Quaternion bulletRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+        Bullet bullet = Instantiate(projectilePrefab, firePoint.position, bulletRotation).GetComponent<Bullet>();
+        bullet.dir = finalDirection;
     }
 
 }

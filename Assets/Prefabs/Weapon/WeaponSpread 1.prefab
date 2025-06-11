@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5613312300895394596}
   - component: {fileID: 6297576220002162083}
   - component: {fileID: 2828283050757183980}
-  - component: {fileID: 2985580758828808702}
+  - component: {fileID: -5179097201362435656}
   m_Layer: 8
   m_Name: WeaponSpread 1
   m_TagString: Weapon
@@ -183,7 +183,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2985580758828808702
+--- !u!114 &-5179097201362435656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eaea8aa7edb26458cc02269bccc73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1.5
+  fireRate: 1
   projectilePrefab: {fileID: 123555700027921714, guid: 1a1df60a650247c43b324994237a56bd, type: 3}
   firePoint: {fileID: 3583201168921020343}
   spreadAngle: 30

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5613312300895394596}
   - component: {fileID: 6297576220002162083}
   - component: {fileID: 2828283050757183980}
-  - component: {fileID: -5003583971449011796}
+  - component: {fileID: -5216256728424956758}
   m_Layer: 8
   m_Name: WeaponMouseShooter 1
   m_TagString: Weapon
@@ -183,7 +183,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5003583971449011796
+--- !u!114 &-5216256728424956758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
