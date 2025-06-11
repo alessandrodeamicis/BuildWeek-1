@@ -35,12 +35,13 @@ public abstract class BaseWeapon : MonoBehaviour
             fireTimer = 0f;
         }
     }
-
+  
     protected abstract void Fire();
     public virtual void LevelUp()
     {
         level++;
         fireRate += 0.2f;
+        Debug.Log($"{gameObject.name} livellata! Nuovo danno: {level}");
     }
 
     protected void PlayFireSound()

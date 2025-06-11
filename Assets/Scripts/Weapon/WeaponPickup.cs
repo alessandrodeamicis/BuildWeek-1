@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ public class WeaponPickup : MonoBehaviour
 
         Transform weaponParent = FindWeaponHolder(other.transform);
         if (weaponParent == null) return;
-        EquipWeapon(weaponParent);
+        HandleWeaponPickup(weaponParent);
         //PlayPickupSound();
         AudioController.Play(pickupSound, transform.position, 1);
         Destroy(gameObject, destroyDelay);
@@ -34,16 +34,31 @@ public class WeaponPickup : MonoBehaviour
         return holder != null ? holder : player;
     }
 
-    private void EquipWeapon(Transform weaponParent)
+
+    void HandleWeaponPickup(Transform weaponSlot)
     {
-        if (weaponPrefab == null) return;
+        
+        GameObject newWeaponObj = Instantiate(weaponPrefab);
+        BaseWeapon newWeapon = newWeaponObj.GetComponent<BaseWeapon>();
+        System.Type newType = newWeapon.GetType();
 
-        GameObject newWeapon = Instantiate(weaponPrefab, weaponParent);
-        newWeapon.transform.localPosition = Vector2.zero;
+       
+        foreach (BaseWeapon existing in weaponSlot.GetComponentsInChildren<BaseWeapon>())
+        {
+            if (existing.GetType() == newType)
+            {
+               
+                existing.LevelUp();
+                Destroy(newWeaponObj);
+                return;
+            }
+        }
+
+        newWeapon.transform.SetParent(weaponSlot);
+        newWeapon.transform.localPosition = Vector3.zero;
         newWeapon.transform.localRotation = Quaternion.identity;
-        newWeapon.transform.localScale = Vector2.one * 0.2f;
+        newWeapon.transform.localScale = Vector3.one * 0.2f;
     }
-
     //private void PlayPickupSound()
     //{
     //    if (pickupSound != null)

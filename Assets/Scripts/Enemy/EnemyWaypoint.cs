@@ -5,21 +5,26 @@ using UnityEngine;
 public class EnemyWaypoint : MonoBehaviour
 {
 
-    
+    [SerializeField] private float speed;
+
     public float movespeed = 5f;
     public float waitTime = 2f;
     public bool loopWaypoints = true;
     public float detectionRange = 3f;
     public int MaxWaypoint = 100;
-
-    // Start is called before the first frame update
+    public AudioClip hitSound;
+   
     private Transform waypointParent;
     private Transform[] waypoints;
     private int currentWaypointIndex;
     private bool isWaiting;
     private Transform player;
+    private LifeController life;
+    
     void Start()
     {
+
+        life = GetComponent<LifeController>();  
         GameObject waypointObject = GameObject.FindWithTag("Waypoint");
         if (waypointObject != null) 
         {
@@ -92,6 +97,26 @@ public class EnemyWaypoint : MonoBehaviour
         }
 
         isWaiting = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.collider.CompareTag("Bullet"))
+        {
+            Bullet bullet = collision.collider.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
+                //audioSource.Play();
+                AudioController.Play(hitSound, transform.position, 1);
+                life.AddHp(-bullet.Damage);
+            }
+        }
     }
 
     void ChasePlayer()
