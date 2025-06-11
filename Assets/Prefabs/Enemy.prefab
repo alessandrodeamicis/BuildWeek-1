@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6453626710442279968}
   - component: {fileID: 897148811846492282}
   - component: {fileID: 8535795384730416583}
+  - component: {fileID: 2365457392198096470}
   - component: {fileID: 1162912699953662334}
   - component: {fileID: 3371089143551833060}
-  - component: {fileID: 2365457392198096470}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 613658156, guid: 1bc6097228993f045852159e71f81d5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,7 +178,8 @@ MonoBehaviour:
   speed: 5
   player: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
   anim: {fileID: 1162912699953662334}
-  audioSource: {fileID: 3371089143551833060}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!114 &8535795384730416583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +192,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d2b266ea566942ba3b220b40a1dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
-  currentHp: 3
   onDeath: 2
+  maxHP: 100
+  deathSound: {fileID: 0}
+--- !u!114 &2365457392198096470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760876061242768457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35282fe5bed90d04e8a2e0bcae56173b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDropPrefab: {fileID: 123555700027921714, guid: 091b434c4c6eeba46bc167cb44b9f1b9, type: 3}
+  dropOffset: {x: 0, y: 0, z: 0}
 --- !u!95 &1162912699953662334
 Animator:
   serializedVersion: 5
@@ -311,17 +326,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2365457392198096470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760876061242768457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35282fe5bed90d04e8a2e0bcae56173b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponDropPrefab: {fileID: 123555700027921714, guid: 091b434c4c6eeba46bc167cb44b9f1b9, type: 3}
-  dropOffset: {x: 0, y: 0, z: 0}

@@ -17,24 +17,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-    }
 
-    private void Movement()
-    {
-      
     }
 
     private void FixedUpdate()
-    {
-     
+    {     
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
         dir = new Vector2(x, y).normalized;
-       Vector2 newPosition = rb.position + dir * speed * Time.fixedDeltaTime;
+        Vector2 newPosition = rb.position + dir * speed * Time.fixedDeltaTime;
         rb.MovePosition(newPosition);
-    }
-
- 
+    } 
 }
-
-

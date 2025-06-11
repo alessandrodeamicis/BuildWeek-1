@@ -13211,7 +13211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f1a477e0219754db04faa2f7cfafee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 4559935c00ef8e94b846e2e03e39f0d0, type: 3}
   volume: 0.5
   persistOnLoad: 1
 --- !u!4 &2028582888
@@ -13333,11 +13333,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: d3a3dacae7e54ec4aa83436f38fce958, type: 2}
     - target: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
       propertyPath: m_LocalPosition.z
