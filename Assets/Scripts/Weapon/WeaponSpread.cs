@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class WeaponSpread : BaseWeapon
 {
+
     public float spreadAngle = 30f;
 
     protected override void Fire()
     {
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Instantiate(projectilePrefab, firePoint.position, Quaternion.Euler(0, 0, firePoint.eulerAngles.z + spreadAngle));
-        Instantiate(projectilePrefab, firePoint.position, Quaternion.Euler(0, 0, firePoint.eulerAngles.z - spreadAngle));
+        FireBullet(0f);
+        FireBullet(+spreadAngle);
+        FireBullet(-spreadAngle);
     }
+
+    void FireBullet(float angleOffset)
+    {
+        bool facingRight = transform.localScale.x > 0;
+        float baseAngle = facingRight ? 0f : 180f;
+        float totalAngle = baseAngle + angleOffset;
+
+        Quaternion rot = Quaternion.Euler(0f, 0f, totalAngle);
+        Bullet bullet = Instantiate(projectilePrefab, firePoint.position, rot).GetComponent<Bullet>();
+        bullet.dir = rot * new Vector2(firePoint.position.x, firePoint.position.y);
+    }
+
 }
