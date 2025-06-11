@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class WeaponPickup : MonoBehaviour
 {
     [Header("Arma da equipaggiare")]
     [SerializeField] private GameObject weaponPrefab;
@@ -23,7 +23,8 @@ public class Pickup : MonoBehaviour
         Transform weaponParent = FindWeaponHolder(other.transform);
         if (weaponParent == null) return;
         EquipWeapon(weaponParent);
-        PlayPickupSound();
+        //PlayPickupSound();
+        AudioController.Play(pickupSound, transform.position, 1);
         Destroy(gameObject, destroyDelay);
     }
 
@@ -32,8 +33,6 @@ public class Pickup : MonoBehaviour
         Transform holder = player.Find(weaponHolderName);
         return holder != null ? holder : player;
     }
-
-   
 
     private void EquipWeapon(Transform weaponParent)
     {
@@ -45,11 +44,11 @@ public class Pickup : MonoBehaviour
         newWeapon.transform.localScale = Vector2.one * 0.2f;
     }
 
-    private void PlayPickupSound()
-    {
-        if (pickupSound != null)
-        {
-            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-        }
-    }
+    //private void PlayPickupSound()
+    //{
+    //    if (pickupSound != null)
+    //    {
+    //        AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+    //    }
+    //}
 }

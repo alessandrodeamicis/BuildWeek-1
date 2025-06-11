@@ -7,8 +7,10 @@ public abstract class BaseWeapon : MonoBehaviour
     public float fireRate = 1f;
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public AudioClip fireSound;
 
     private float fireTimer;
+    private int level = 0;
 
     private void Start()
     {
@@ -35,4 +37,14 @@ public abstract class BaseWeapon : MonoBehaviour
     }
 
     protected abstract void Fire();
+    public virtual void LevelUp()
+    {
+        level++;
+        fireRate += 0.2f;
+    }
+
+    protected void PlayFireSound()
+    {
+        AudioController.Play(fireSound, transform.position, 1);
+    }
 }

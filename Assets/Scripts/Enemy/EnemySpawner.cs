@@ -13,6 +13,9 @@ public class EnemySpawner : MonoBehaviour
     [Header("Intervallo tra gli spawn (secondi)")]
     public float spawnInterval = 2f;
 
+    [Header("Audio di spawn")]
+    public AudioClip spawnSound;
+
     private float timer = 0f;
 
     void Update()
@@ -22,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
         if (timer >= spawnInterval)
         {
             SpawnEnemy();
+            AudioController.Play(spawnSound, transform.position, 1);
             timer = 0f;
         }
     }

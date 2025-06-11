@@ -8,12 +8,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private Transform player;
-    private LifeController life;
     [SerializeField] private Animator anim;
-    [SerializeField] private AudioSource audioSource;
+
+    public AudioClip hitSound;
+    public AudioClip deathSound;
+    //[SerializeField] private AudioSource audioSource;
+
+    private LifeController life;
+    private Rigidbody2D rb;
     private float x;
     private float y;
     private Vector2 dir;
@@ -24,7 +28,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         life = GetComponent<LifeController>();
         anim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
@@ -66,13 +70,14 @@ public class Enemy : MonoBehaviour
             Bullet bullet = collision.collider.GetComponent<Bullet>();
             if (bullet != null)
             {
-                audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
-                audioSource.Play();
+                //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
+                //audioSource.Play();
+                AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
-
             }
         }
     }
+
     private void Animate()
     {
         float direction = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime).magnitude;
@@ -99,6 +104,4 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Die", dead);
 
     }
-
-
 }

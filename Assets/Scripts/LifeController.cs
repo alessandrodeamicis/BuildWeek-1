@@ -11,43 +11,41 @@ public class LifeController : MonoBehaviour
         Destroy  
     }
 
- 
-    [SerializeField] private int maxHp = 100;
-    [SerializeField] private int currentHp;
-
     [SerializeField] private DeathAction onDeath = DeathAction.Destroy;
+    [SerializeField] private int maxHP = 100;
+    private int currentHP;
+    public AudioClip deathSound;
 
-    public int CurrentHp => currentHp;
-    public int MaxHp => maxHp;
-    public bool IsAlive => currentHp > 0;
+    public int CurrentHP => currentHP;
+    public int MaxHP => maxHP;
+    public bool IsAlive => currentHP > 0;
 
     private void Awake()
     {
-        currentHp = maxHp;
+        currentHP = maxHP;
     }
 
     public int SetHp(int newHp)
     {
-        currentHp = Mathf.Clamp(newHp, 0, maxHp);
+        currentHP = Mathf.Clamp(newHp, 0, maxHP);
 
-        if (currentHp <= 0)
+        if (currentHP <= 0)
         {
             HandleDeath();
         }
-
-        return currentHp;
+        return currentHP;
     }
 
     public int AddHp(int amount)
     {
-        currentHp = Mathf.Clamp(currentHp + amount, 0, maxHp);
+        currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
 
-        if (amount < 0 && currentHp <= 0)
+        if (amount < 0 && currentHP <= 0)
         {
+            AudioController.Play(deathSound, transform.position, 1);
             HandleDeath();
         }
-
-        return currentHp;
+        return currentHP;
     }
 
     public void Kill()
@@ -57,15 +55,14 @@ public class LifeController : MonoBehaviour
 
     public void Revive()
     {
-        SetHp(maxHp);
+        SetHp(maxHP);
     }
 
     private void HandleDeath()
     {
         switch (onDeath)
         {
-            case DeathAction.None:
-                
+            case DeathAction.None:                
                 break;
 
             case DeathAction.Disable:

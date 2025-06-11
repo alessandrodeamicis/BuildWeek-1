@@ -14,8 +14,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        player = GetComponent<PlayerController>();
-       
+        player = GetComponent<PlayerController>();       
     }
 
     // Update is called once per frame
@@ -61,5 +60,4 @@ public class PlayerAnimation : MonoBehaviour
 
         anim.SetBool("isMoving",isMoving);
     }
-
 }
