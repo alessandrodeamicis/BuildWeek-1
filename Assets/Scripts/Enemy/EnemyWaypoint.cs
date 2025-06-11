@@ -10,9 +10,10 @@ public class EnemyWaypoint : MonoBehaviour
     public float waitTime = 2f;
     public bool loopWaypoints = true;
     public float detectionRange = 3f;
+    public int MaxEnemies = 10000;
 
     // Start is called before the first frame update
-
+    
     private Transform[] waypoints;
     private int currentWaypointIndex;
     private bool isWaiting;
@@ -70,7 +71,7 @@ public class EnemyWaypoint : MonoBehaviour
         isWaiting = true;
         yield return new WaitForSeconds(waitTime);
 
-        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
+        currentWaypointIndex = MaxEnemies;
 
         isWaiting = false;
     }
