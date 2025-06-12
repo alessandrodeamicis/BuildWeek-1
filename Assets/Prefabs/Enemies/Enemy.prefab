@@ -179,8 +179,8 @@ MonoBehaviour:
   speed: 2
   player: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
   anim: {fileID: 1162912699953662334}
-  hitSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
+  deathSound: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
 --- !u!114 &8535795384730416583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeath: 2
-  maxHP: 100
-  deathSound: {fileID: 0}
+  maxHP: 5
+  deathSound: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
 --- !u!114 &2365457392198096470
 MonoBehaviour:
   m_ObjectHideFlags: 0

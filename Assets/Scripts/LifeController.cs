@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeController : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class LifeController : MonoBehaviour
     {
         None,    
         Disable, 
-        Destroy  
+        Destroy,
+        SceneReload
     }
 
     [SerializeField] private DeathAction onDeath = DeathAction.Destroy;
@@ -71,6 +73,9 @@ public class LifeController : MonoBehaviour
 
             case DeathAction.Destroy:
                 Destroy(gameObject);
+                break;
+            case DeathAction.SceneReload:
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
         }
     }

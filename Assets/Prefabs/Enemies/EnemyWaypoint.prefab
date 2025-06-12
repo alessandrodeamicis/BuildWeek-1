@@ -151,7 +151,7 @@ MonoBehaviour:
   loopWaypoints: 1
   detectionRange: 3
   MaxWaypoint: 100
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
   damage: 1
 --- !u!114 &-3593035140656453187
 MonoBehaviour:
