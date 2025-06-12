@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d2b266ea566942ba3b220b40a1dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 3
-  currentHp: 3
   onDeath: 2
+  maxHP: 100
+  deathSound: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
 --- !u!50 &2080885527228102871
 Rigidbody2D:
   serializedVersion: 4

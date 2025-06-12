@@ -17579,7 +17579,6 @@ MonoBehaviour:
   onDeath: 3
   maxHP: 2
   deathSound: {fileID: 0}
-  healthbar: {fileID: 0}
 --- !u!1 &1829698230
 GameObject:
   m_ObjectHideFlags: 0
@@ -17784,7 +17783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: 4559935c00ef8e94b846e2e03e39f0d0, type: 3}
-  volume: 0
+  volume: 0.3
   persistOnLoad: 1
 --- !u!4 &2028582888
 Transform:
