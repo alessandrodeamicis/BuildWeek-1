@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
             {
                 //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
                 //audioSource.Play();
+                OnDrawGizmos();
                 AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
             }
