@@ -14,22 +14,22 @@ public class EnemyWaypoint : MonoBehaviour
     public int MaxWaypoint = 100;
     public AudioClip hitSound;
     public int damage = 1;
-   
+
     private Transform waypointParent;
     private Transform[] waypoints;
     private int currentWaypointIndex;
     private bool isWaiting;
     private Transform player;
     private LifeController life;
-    
+
     void Start()
     {
 
-        life = GetComponent<LifeController>();  
+        life = GetComponent<LifeController>();
         GameObject waypointObject = GameObject.FindWithTag("Waypoint");
-        if (waypointObject != null) 
+        if (waypointObject != null)
         {
-            waypointParent = waypointObject.transform; 
+            waypointParent = waypointObject.transform;
         }
 
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -62,9 +62,9 @@ public class EnemyWaypoint : MonoBehaviour
         }
         else
         {
-            MoveToWaypoint(); 
+            MoveToWaypoint();
         }
-       
+
     }
 
     void MoveToWaypoint()
@@ -93,19 +93,26 @@ public class EnemyWaypoint : MonoBehaviour
             }
             else
             {
-                currentWaypointIndex = waypoints.Length - 1; 
+                currentWaypointIndex = waypoints.Length - 1;
             }
         }
 
         isWaiting = false;
     }
 
+    public void OnDrawGizmos()
+    {
+       
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + Vector3.left * 2, 0.5f);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         LifeController player = GetComponent<LifeController>();
         if (collision.collider.CompareTag("Player"))
         {
 
+            OnDrawGizmos();
             player.AddHp(-damage);
         }
 
@@ -116,6 +123,7 @@ public class EnemyWaypoint : MonoBehaviour
             {
                 //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
                 //audioSource.Play();
+                OnDrawGizmos();
                 AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
             }
@@ -124,7 +132,7 @@ public class EnemyWaypoint : MonoBehaviour
 
     void ChasePlayer()
     {
-        
+
         transform.position = Vector2.MoveTowards(transform.position, player.position, movespeed * Time.deltaTime);
 
     }

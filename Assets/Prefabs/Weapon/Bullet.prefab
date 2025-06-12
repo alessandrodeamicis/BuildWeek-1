@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  lifetime: 2
   damage: 1
-  audioSource: {fileID: 0}
+  lifetime: 2
+  hitSound: {fileID: 0}
 --- !u!82 &2828283050757183980
 AudioSource:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4fa6e2a1a1216bb4085998c82953d236, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.491
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -99,7 +99,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4fa6e2a1a1216bb4085998c82953d236, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.491
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 123555700027921714, guid: 340073d18a4f1a643ad3f38510689d6f, type: 3}
   firePoint: {fileID: 8948565190143052934}
   fireSound: {fileID: 0}
+  spreadAngle: 180
 --- !u!1 &1891622731005045751
 GameObject:
   m_ObjectHideFlags: 0

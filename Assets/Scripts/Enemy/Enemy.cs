@@ -35,6 +35,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void OnDrawGizmos()
+    {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + Vector3.left * 2, 0.5f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -67,6 +74,7 @@ public class Enemy : MonoBehaviour
 
             if (lifeController != null)
             {
+                OnDrawGizmos();
                 lifeController.AddHp(-1);
             }
         }

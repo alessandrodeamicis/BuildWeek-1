@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponRotatingDirection 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2828283050757183980, guid: 3e9ec08e535a9c54d86a39881583a5c7, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5613312300895394596, guid: 3e9ec08e535a9c54d86a39881583a5c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.001
@@ -274,6 +278,10 @@ PrefabInstance:
     - target: {fileID: 123555700027921714, guid: 05d8c02bb92d07248b46d53754317b77, type: 3}
       propertyPath: m_Name
       value: WeaponForward 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828283050757183980, guid: 05d8c02bb92d07248b46d53754317b77, type: 3}
+      propertyPath: m_Volume
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5613312300895394596, guid: 05d8c02bb92d07248b46d53754317b77, type: 3}
       propertyPath: m_LocalPosition.x

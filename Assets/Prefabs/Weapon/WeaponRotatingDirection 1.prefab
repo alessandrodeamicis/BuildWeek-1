@@ -99,7 +99,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4fa6e2a1a1216bb4085998c82953d236, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.491
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b84fdd28b554ee44a7dc8ee9f8e88e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 5
   projectilePrefab: {fileID: 123555700027921714, guid: 4e5c612f681dca244be0bc89c69a45fc, type: 3}
   firePoint: {fileID: 3499089295442906379}
   fireSound: {fileID: 0}
