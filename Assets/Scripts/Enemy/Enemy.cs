@@ -59,10 +59,19 @@ public class Enemy : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Destroy(gameObject);
+           
+            GameObject playerObject = collision.collider.gameObject;
+
+          
+            LifeController lifeController = playerObject.GetComponent<LifeController>();
+
+            if (lifeController != null)
+            {
+                lifeController.AddHp(-1);
+            }
         }
 
-        if (collision.collider.CompareTag("Bullet"))
+            if (collision.collider.CompareTag("Bullet"))
         {
             Bullet bullet = collision.collider.GetComponent<Bullet>();
             if (bullet != null)
