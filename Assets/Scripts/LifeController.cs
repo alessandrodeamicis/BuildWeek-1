@@ -17,6 +17,7 @@ public class LifeController : MonoBehaviour
     [SerializeField] private int maxHP = 100;
     private int currentHP;
     public AudioClip deathSound;
+    public Healthbar healthbar;
 
     public int CurrentHP => currentHP;
     public int MaxHP => maxHP;
@@ -25,23 +26,26 @@ public class LifeController : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;
+        healthbar.SetMaxHealth(currentHP);
     }
 
     public int SetHp(int newHp)
     {
         currentHP = Mathf.Clamp(newHp, 0, maxHP);
-
+        healthbar.SetHealth(currentHP);
         if (currentHP <= 0)
         {
             HandleDeath();
-        }
+        } 
+        
         return currentHP;
+       
     }
 
     public int AddHp(int amount)
     {
         currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
-
+        healthbar.SetHealth(currentHP);
         if (amount < 0 && currentHP <= 0)
         {
             AudioController.Play(deathSound, transform.position, 1);
@@ -53,11 +57,13 @@ public class LifeController : MonoBehaviour
     public void Kill()
     {
         SetHp(0);
+        healthbar.SetHealth(currentHP);
     }
 
     public void Revive()
     {
         SetHp(maxHP);
+        healthbar.SetMaxHealth(MaxHP);
     }
 
     private void HandleDeath()
