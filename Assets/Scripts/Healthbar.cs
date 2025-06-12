@@ -9,9 +9,14 @@ public class Healthbar : MonoBehaviour
     public Slider slider;
     public void SetMaxHealth(int hp)
     {
-        slider.maxValue = life.MaxHP;
-        slider.value = life.CurrentHP;
+        slider.maxValue = hp;
+        slider.value = hp;
 
+    }
+
+    public void SetHealth(int hp)
+    {
+        slider.value = hp;
     }
     // Start is called before the first frame update
     void Start()

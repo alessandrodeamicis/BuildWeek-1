@@ -15,6 +15,8 @@ public class EnemyRandomMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 randomDirection;
     private float directionTimer;
+    public float detectionRadius = 3f;
+    public Color gizmoColor = Color.red;
 
     void Start()
     {
@@ -68,12 +70,7 @@ public class EnemyRandomMovement : MonoBehaviour
         randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
-    public void OnDrawGizmos()
-    {
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + Vector3.left * 2, 0.5f);
-    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -91,7 +88,7 @@ public class EnemyRandomMovement : MonoBehaviour
             Bullet bullet = collision.collider.GetComponent<Bullet>();
             if (bullet != null && life != null)
             {   
-                OnDrawGizmos();
+                
                 AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
             }
