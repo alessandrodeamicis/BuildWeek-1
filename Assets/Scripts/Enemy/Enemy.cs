@@ -20,8 +20,6 @@ public class Enemy : MonoBehaviour
     private float x;
     private float y;
     private Vector2 dir;
-    public float detectionRadius = 3f;
-    public Color gizmoColor = Color.red;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +35,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void OnDrawGizmos()
+    {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + Vector3.left * 2, 0.5f);
+    }
 
     // Update is called once per frame
     void Update()
@@ -70,6 +74,7 @@ public class Enemy : MonoBehaviour
 
             if (lifeController != null)
             {
+                OnDrawGizmos();
                 lifeController.AddHp(-1);
             }
         }
@@ -81,7 +86,6 @@ public class Enemy : MonoBehaviour
             {
                 //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
                 //audioSource.Play();
-             
                 AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
             }

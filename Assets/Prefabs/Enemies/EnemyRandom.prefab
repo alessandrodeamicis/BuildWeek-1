@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyRandom
       objectReference: {fileID: 0}
-    - target: {fileID: 1162912699953662334, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 344fd3a82bdd51b40968d8317345101e, type: 2}
     - target: {fileID: 6715219412124153057, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: m_Color.b
       value: 0.42959788

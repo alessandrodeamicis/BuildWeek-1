@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Variant 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1162912699953662334, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 34574146f8db276429441f0d604791df, type: 2}
     - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: weaponDropPrefab
       value: 

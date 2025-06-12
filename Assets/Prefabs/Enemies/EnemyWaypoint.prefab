@@ -43,10 +43,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWaypoint
       objectReference: {fileID: 0}
-    - target: {fileID: 1162912699953662334, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9c4c3e69af6d1124298b63dd516a7c56, type: 2}
     - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: chance
       value: 15
