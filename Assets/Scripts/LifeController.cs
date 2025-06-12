@@ -17,6 +17,7 @@ public class LifeController : MonoBehaviour
     [SerializeField] private int maxHP = 100;
     private int currentHP;
     public AudioClip deathSound;
+    public HealthBar healthBar;
 
     public int CurrentHP => currentHP;
     public int MaxHP => maxHP;
@@ -25,11 +26,16 @@ public class LifeController : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;
+        healthBar?.SetMaxHealth(maxHP);
     }
 
     public int SetHp(int newHp)
     {
         currentHP = Mathf.Clamp(newHp, 0, maxHP);
+<<<<<<< Updated upstream
+=======
+        healthBar?.SetHealth(currentHP);
+>>>>>>> Stashed changes
         Debug.Log(currentHP);
 
         if (currentHP <= 0)
