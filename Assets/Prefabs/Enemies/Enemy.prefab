@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2365457392198096470}
   - component: {fileID: 1162912699953662334}
   - component: {fileID: 3371089143551833060}
+  - component: {fileID: -3573593634269056325}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460a2e9ecace39943a8bb4a340f7a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   player: {fileID: 4869731782964261304, guid: 3188ad69ee8d26e4288efb5d3e0c927d, type: 3}
   anim: {fileID: 1162912699953662334}
   hitSound: {fileID: 0}
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDropPrefab: {fileID: 123555700027921714, guid: 091b434c4c6eeba46bc167cb44b9f1b9, type: 3}
   dropOffset: {x: 0, y: 0, z: 0}
+  chance: 15
 --- !u!95 &1162912699953662334
 Animator:
   serializedVersion: 5
@@ -326,3 +328,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3573593634269056325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760876061242768457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa544c8a0ae96934c9049a5b3c249f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1.5
+  damage: 1
+  attackCooldown: 1

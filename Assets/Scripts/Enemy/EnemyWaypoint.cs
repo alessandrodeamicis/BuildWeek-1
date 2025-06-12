@@ -13,6 +13,7 @@ public class EnemyWaypoint : MonoBehaviour
     public float detectionRange = 3f;
     public int MaxWaypoint = 100;
     public AudioClip hitSound;
+    public int damage = 1;
    
     private Transform waypointParent;
     private Transform[] waypoints;
@@ -101,9 +102,11 @@ public class EnemyWaypoint : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        LifeController player = GetComponent<LifeController>();
         if (collision.collider.CompareTag("Player"))
         {
-            Destroy(gameObject);
+
+            player.AddHp(-damage);
         }
 
         if (collision.collider.CompareTag("Bullet"))

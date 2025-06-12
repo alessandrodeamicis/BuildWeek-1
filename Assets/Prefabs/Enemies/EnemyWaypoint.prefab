@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1527035918329358278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6990572304910751344}
+  m_Layer: 6
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6990572304910751344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527035918329358278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.42, y: -0.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2009679254695485023}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4919136851156067723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +41,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 760876061242768457, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant 2
+      value: EnemyWaypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+      propertyPath: chance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: weaponDropPrefab
@@ -74,13 +109,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 897148811846492282, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+    - {fileID: -3573593634269056325, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6892645177608403924, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6990572304910751344}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 760876061242768457, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8194273050029726156}
+    - targetCorrespondingSourceObject: {fileID: 760876061242768457, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3593035140656453187}
   m_SourcePrefab: {fileID: 100100000, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+--- !u!4 &2009679254695485023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6892645177608403924, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+  m_PrefabInstance: {fileID: 4919136851156067723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5677742085739502018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 760876061242768457, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
@@ -98,8 +145,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bc69ccc190365408872532bae5ccdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 5
+  speed: 3
+  movespeed: 3
   waitTime: 2
   loopWaypoints: 1
   detectionRange: 3
   MaxWaypoint: 100
+  hitSound: {fileID: 0}
+  damage: 1
+--- !u!114 &-3593035140656453187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677742085739502018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d77b7c22f21394f8fc4d80548ba2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwRange: 8
+  throwCooldown: 3
+  shovelPrefab: {fileID: 9057783604201228756, guid: b3c0d0866f4361544a577dd1a27cb30c, type: 3}
+  throwPoint: {fileID: 6990572304910751344}
+  projectileSpeed: 10

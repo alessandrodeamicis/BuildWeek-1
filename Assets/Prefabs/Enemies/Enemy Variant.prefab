@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 1590364cfa43f0341931afb8f97d55b8, type: 2}
     - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
+      propertyPath: chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365457392198096470, guid: 67b29a271de0117419952ef16bdc40ce, type: 3}
       propertyPath: weaponDropPrefab
       value: 
       objectReference: {fileID: 123555700027921714, guid: 7bdfced7e067eb749873b3846461d670, type: 3}
