@@ -26,7 +26,7 @@ public abstract class BaseWeapon : MonoBehaviour
         }
     }
 
-    void Update()
+    protected virtual void Update()
     {
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireRate)

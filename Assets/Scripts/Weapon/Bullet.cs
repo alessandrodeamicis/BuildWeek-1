@@ -13,14 +13,16 @@ public class Bullet : MonoBehaviour
     //public AudioSource audioSource;
 
     public int Damage => damage;
-
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;   
+    }
     public Vector2 dir
     {
         get;
         set;
     }
-
-    public float Speed => speed;
 
     private Rigidbody2D _rb;
 
