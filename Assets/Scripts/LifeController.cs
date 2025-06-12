@@ -30,6 +30,7 @@ public class LifeController : MonoBehaviour
     public int SetHp(int newHp)
     {
         currentHP = Mathf.Clamp(newHp, 0, maxHP);
+        Debug.Log(currentHP);
 
         if (currentHP <= 0)
         {
