@@ -8,7 +8,7 @@ public class RotatingScythe : MonoBehaviour
     public Transform firePoint;              
     public float orbitRadius = 2.0f;
     public float orbitSpeed = 180.0f;
-    public float duration = 5.0f;
+    public float duration = 3.0f;
 
     public int dmg => damage;
 
@@ -45,11 +45,11 @@ public class RotatingScythe : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Enemy"))
         {
-            other.GetComponent<LifeController>()?.AddHp(-dmg);
+            collision.collider.GetComponent<LifeController>()?.AddHp(-dmg);
         }
     }
 

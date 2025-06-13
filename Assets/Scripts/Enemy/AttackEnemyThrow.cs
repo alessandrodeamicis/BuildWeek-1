@@ -37,7 +37,7 @@ public class AttackEnemyThrow : MonoBehaviour
     // Update is called once per frame
     void ThrowShovel()
     {
-        animator.SetTrigger("Throw");
+        
 
         if (shovelPrefab != null && throwPoint != null)
         {

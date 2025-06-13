@@ -100,19 +100,14 @@ public class EnemyWaypoint : MonoBehaviour
         isWaiting = false;
     }
 
-    public void OnDrawGizmos()
-    {
-       
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + Vector3.left * 2, 0.5f);
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         LifeController player = GetComponent<LifeController>();
         if (collision.collider.CompareTag("Player"))
         {
 
-            OnDrawGizmos();
+            
             player.AddHp(-damage);
         }
 
@@ -123,7 +118,7 @@ public class EnemyWaypoint : MonoBehaviour
             {
                 //audioSource.pitch = UnityEngine.Random.Range(0.1f, 1.1f);
                 //audioSource.Play();
-                OnDrawGizmos();
+                
                 AudioController.Play(hitSound, transform.position, 1);
                 life.AddHp(-bullet.Damage);
             }

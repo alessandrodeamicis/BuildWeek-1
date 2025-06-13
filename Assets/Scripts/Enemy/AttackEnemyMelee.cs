@@ -33,7 +33,6 @@ public class AttackEnemyMelee : MonoBehaviour
 
     void Attack()
     {
-        anim.SetTrigger("Attack");
         LifeController playerHp = player.GetComponent<LifeController>();
         if ( playerHp != null)
         {

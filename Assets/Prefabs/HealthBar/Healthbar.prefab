@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06920f51a8fcb7240855b19b57822e36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df90cb0758e031b40a5eba51808da237, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38e7b33b946efbc4caff9da555b1711a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 974baeca5ef3f5d4ab4a289ffacedb2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142214351745317406}
   - component: {fileID: 4076528178469581503}
-  - component: {fileID: 4066916682352239414}
+  - component: {fileID: 3719507197317093853}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -237,11 +237,11 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.85
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4066916682352239414
+--- !u!114 &3719507197317093853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464352381800545775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70855c3fe353a7e469ad380588f49526, type: 3}
+  m_Script: {fileID: 11500000, guid: be08f069f45e73146a6ccc9d067d2922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4076528178469581503}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f4382f1990912804cad6d6cd564e7a0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
