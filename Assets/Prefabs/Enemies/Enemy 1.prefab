@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8271401500006702715}
   - component: {fileID: 4203058803573305885}
   - component: {fileID: 9044072299803013330}
-  - component: {fileID: 8740145945097179992}
+  - component: {fileID: -8936125952350846193}
   m_Layer: 6
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -222,7 +222,7 @@ MonoBehaviour:
   maxHP: 5
   deathSound: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   healthBar: {fileID: 1089114771373058150}
---- !u!114 &8740145945097179992
+--- !u!114 &-8936125952350846193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,13 +231,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9190202164388789236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55394bb975457534e9471697538445f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 35282fe5bed90d04e8a2e0bcae56173b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 123555700027921714, guid: ce38057f2f21aeb43ad505e5e3bc1fc8, type: 3}
-  weaponHolderName: WeaponSlot
-  pickupSound: {fileID: 8300000, guid: 64795b87003c2324fa0814fbc336066c, type: 3}
-  destroyDelay: 0.1
+  weaponDropPrefab: {fileID: 123555700027921714, guid: ce38057f2f21aeb43ad505e5e3bc1fc8, type: 3}
+  dropOffset: {x: 0, y: 0, z: 0}
+  chance: 15
 --- !u!1001 &4360337711468016059
 PrefabInstance:
   m_ObjectHideFlags: 0

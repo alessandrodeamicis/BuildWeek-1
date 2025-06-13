@@ -5,11 +5,11 @@ using UnityEngine;
 public class GateAnimation : MonoBehaviour
 {
     Rigidbody2D rb;
-    public Animation anim;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animation>();   
+        anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,7 +25,7 @@ public class GateAnimation : MonoBehaviour
 
         if (enemies.Length == 0)
         {
-            anim.Play();
+            anim.SetBool("DoorOpen", true);
 
         }
 

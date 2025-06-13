@@ -4206,7 +4206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076528178469581503, guid: 7ebfd2be4445034498cf5461a37f6d83, type: 3}
       propertyPath: m_Transition
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4076528178469581503, guid: 7ebfd2be4445034498cf5461a37f6d83, type: 3}
       propertyPath: m_Interactable
