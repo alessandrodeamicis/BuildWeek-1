@@ -60185,7 +60185,6 @@ GameObject:
   - component: {fileID: 2093774679}
   - component: {fileID: 2093774678}
   - component: {fileID: 2093774677}
-  - component: {fileID: 2093774676}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -60193,21 +60192,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &2093774676
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093774675}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &2093774677
 MonoBehaviour:
   m_ObjectHideFlags: 0
