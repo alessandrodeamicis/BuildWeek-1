@@ -45,7 +45,7 @@ public class LifeController : MonoBehaviour
     public int AddHp(int amount)
     {
         currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
-
+        healthBar?.SetHealth(currentHP);
         if (amount < 0 && currentHP <= 0)
         {
             AudioController.Play(deathSound, transform.position, 1);
@@ -56,11 +56,13 @@ public class LifeController : MonoBehaviour
 
     public void Kill()
     {
+        healthBar?.SetHealth(currentHP);
         SetHp(0);
     }
 
     public void Revive()
     {
+        healthBar?.SetMaxHealth(maxHP);
         SetHp(maxHP);
     }
 
