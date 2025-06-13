@@ -16,7 +16,15 @@ public class EnemySpawner : MonoBehaviour
     [Header("Audio di spawn")]
     public AudioClip spawnSound;
 
+    public int MaxEnemies = 20;
+
     private float timer = 0f;
+
+   
+    void Start()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
 
     void Update()
     {
@@ -38,7 +46,11 @@ public class EnemySpawner : MonoBehaviour
 
         Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)]; 
         GameObject randomEnemy = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
-        Instantiate(randomEnemy, randomSpawnPoint.position, Quaternion.identity);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length < MaxEnemies)
+        {
+            Instantiate(randomEnemy, randomSpawnPoint.position, Quaternion.identity);
+        }
     }
 }
 

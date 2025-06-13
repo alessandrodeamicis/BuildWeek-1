@@ -16,6 +16,7 @@ public class WeaponPickup : MonoBehaviour
     [Header("Delay prima della distruzione")]
     [SerializeField] private float destroyDelay = 0.1f;
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;

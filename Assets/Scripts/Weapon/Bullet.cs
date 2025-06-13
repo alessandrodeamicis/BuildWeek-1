@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private int damage = 1;
 
-    public int lifetime = 2;
+    public int lifetime = 5;
     public AudioClip hitSound;
     //public AudioSource audioSource;
 

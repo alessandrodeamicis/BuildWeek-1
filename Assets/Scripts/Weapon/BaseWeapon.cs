@@ -8,7 +8,7 @@ public abstract class BaseWeapon : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public AudioClip fireSound;
-
+    public float fireRange;
     private float fireTimer;
     private int level = 0;
 

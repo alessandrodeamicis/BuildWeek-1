@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8927057163822906118}
   - component: {fileID: 2828283050757183980}
   - component: {fileID: 5621908256146351352}
+  - component: {fileID: -7484194285202191901}
   m_Layer: 0
   m_Name: PickUpWeaponForward
   m_TagString: Untagged
@@ -262,3 +263,19 @@ MonoBehaviour:
   weaponHolderName: WeaponSlot
   pickupSound: {fileID: 8300000, guid: a9624b9a67bed3c478091f1475699d39, type: 3}
   destroyDelay: 0.1
+--- !u!114 &-7484194285202191901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123555700027921714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302d2b266ea566942ba3b220b40a1dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeath: 2
+  maxHP: 1
+  deathSound: {fileID: 0}
+  healthBar: {fileID: 0}
