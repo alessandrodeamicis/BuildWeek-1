@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5613312300895394596}
   - component: {fileID: 6297576220002162083}
   - component: {fileID: 2828283050757183980}
-  - component: {fileID: 9018308346620289956}
+  - component: {fileID: 7265233299546104733}
   m_Layer: 8
   m_Name: WeaponForward 1
   m_TagString: Weapon
@@ -183,7 +183,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9018308346620289956
+--- !u!114 &7265233299546104733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +198,9 @@ MonoBehaviour:
   fireRate: 1
   projectilePrefab: {fileID: 123555700027921714, guid: 6fdca0967e08c3c4497efa4268a5ba89, type: 3}
   firePoint: {fileID: 6450632493586145872}
-  fireSound: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 4fa6e2a1a1216bb4085998c82953d236, type: 3}
+  shootDirection: {x: 1, y: 0}
+  projectileSpeed: 5
 --- !u!1 &4272907893826544725
 GameObject:
   m_ObjectHideFlags: 0
