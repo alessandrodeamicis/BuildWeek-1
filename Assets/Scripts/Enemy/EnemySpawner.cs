@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
    
     void Start()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+       
     }
 
     void Update()
