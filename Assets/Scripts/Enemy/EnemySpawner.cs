@@ -45,9 +45,7 @@ public class EnemySpawner : MonoBehaviour
 
         Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)]; 
         GameObject randomEnemy = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-       
-            Instantiate(randomEnemy, randomSpawnPoint.position, Quaternion.identity);
+        Instantiate(randomEnemy, randomSpawnPoint.position, Quaternion.identity);
     }
 }
 
